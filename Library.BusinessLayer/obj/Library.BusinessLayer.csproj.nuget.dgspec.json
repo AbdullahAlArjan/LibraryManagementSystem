@@ -1,0 +1,175 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/awartani/Projects/LibraryManagementSystem/Library.BusinessLayer/Library.BusinessLayer.csproj": {}
+  },
+  "projects": {
+    "/home/awartani/Projects/LibraryManagementSystem/Library.BusinessLayer/Library.BusinessLayer.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/awartani/Projects/LibraryManagementSystem/Library.BusinessLayer/Library.BusinessLayer.csproj",
+        "projectName": "Library.BusinessLayer",
+        "projectPath": "/home/awartani/Projects/LibraryManagementSystem/Library.BusinessLayer/Library.BusinessLayer.csproj",
+        "packagesPath": "/home/awartani/.nuget/packages/",
+        "outputPath": "/home/awartani/Projects/LibraryManagementSystem/Library.BusinessLayer/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/awartani/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/home/awartani/Projects/LibraryManagementSystem/Library.DataAccessLayer/Library.DataAccessLayer.csproj": {
+                "projectPath": "/home/awartani/Projects/LibraryManagementSystem/Library.DataAccessLayer/Library.DataAccessLayer.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.121/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/awartani/Projects/LibraryManagementSystem/Library.DataAccessLayer/Library.DataAccessLayer.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/awartani/Projects/LibraryManagementSystem/Library.DataAccessLayer/Library.DataAccessLayer.csproj",
+        "projectName": "Library.DataAccessLayer",
+        "projectPath": "/home/awartani/Projects/LibraryManagementSystem/Library.DataAccessLayer/Library.DataAccessLayer.csproj",
+        "packagesPath": "/home/awartani/.nuget/packages/",
+        "outputPath": "/home/awartani/Projects/LibraryManagementSystem/Library.DataAccessLayer/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/awartani/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/home/awartani/Projects/LibraryManagementSystem/Library.Entities/Library.Entities.csproj": {
+                "projectPath": "/home/awartani/Projects/LibraryManagementSystem/Library.Entities/Library.Entities.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.121/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/awartani/Projects/LibraryManagementSystem/Library.Entities/Library.Entities.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/awartani/Projects/LibraryManagementSystem/Library.Entities/Library.Entities.csproj",
+        "projectName": "Library.Entities",
+        "projectPath": "/home/awartani/Projects/LibraryManagementSystem/Library.Entities/Library.Entities.csproj",
+        "packagesPath": "/home/awartani/.nuget/packages/",
+        "outputPath": "/home/awartani/Projects/LibraryManagementSystem/Library.Entities/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/awartani/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.121/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
