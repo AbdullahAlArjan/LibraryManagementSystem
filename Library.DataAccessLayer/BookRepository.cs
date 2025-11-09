@@ -1,7 +1,8 @@
+using Library.DataAccessLayer.Interfaces;
+using Library.Entities;
 using System;
 using System.Data;
-using System.Data.SqlClient;
-using Library.Entities;
+using Microsoft.Data.SqlClient; 
 
 namespace Library.DataAccessLayer
 {
@@ -56,7 +57,7 @@ namespace Library.DataAccessLayer
                 {
                     book = new Book
                     {
-                        BookId = (int)reader["BookId"],
+                        BookID = (int)reader["BookId"],
                         Title = reader["Title"].ToString(),
                         Author = reader["Author"].ToString(),
                         ISBN = reader["ISBN"].ToString(),
@@ -106,7 +107,7 @@ namespace Library.DataAccessLayer
                                 WHERE BookId = @BookId";
 
                 SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@BookId", book.BookId);
+                command.Parameters.AddWithValue("@BookId", book.BookID);
                 command.Parameters.AddWithValue("@Title", book.Title);
                 command.Parameters.AddWithValue("@Author", book.Author);
                 command.Parameters.AddWithValue("@ISBN", book.ISBN);
@@ -120,6 +121,30 @@ namespace Library.DataAccessLayer
                 rowsAffected = command.ExecuteNonQuery();
             }
 
+            return rowsAffected > 0;
+        }
+        public bool DeleteBook(int id)
+        {
+            int rowsAffected = 0;
+
+            SqlConnection connection = new SqlConnection(DataAccessSettings.ConnectionString);
+            string query = "DELETE FROM Books WHERE BookId = @BookId;";
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@BookId", id);
+            try
+            {
+                connection.Open();
+                rowsAffected = command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("An error occurred while deleting the book.", ex);
+            }
+            finally
+            {
+                connection.Close();
+            }
             return rowsAffected > 0;
         }
     }

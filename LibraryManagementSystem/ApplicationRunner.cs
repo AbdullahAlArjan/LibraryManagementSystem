@@ -1,13 +1,40 @@
 using System;
+using LibraryManagementSystem.Presentation.Menus;
 
-namespace LibraryManagementSystem.Presentation;
-
-public class ApplicationRunner
+namespace LibraryManagementSystem.Presentation
 {
-    private readonly UserManager _userManager = new UserManager();
-    public void Run()
+    public class ApplicationRunner
     {
-        Console.WriteLine("Library Management System is running...");
-        // Additional application logic can be added here.
+        public void Run()
+        {
+            bool exit = false;
+
+            while (!exit)
+            {
+                Console.Clear();
+                Console.WriteLine("=============================");
+                Console.WriteLine("1. Administrator / Librarian Portal");
+                Console.WriteLine("2. Member Portal");
+                Console.WriteLine("0. Exit Application");
+                Console.Write("\nPlease select an option: ");
+
+                switch (Console.ReadLine())
+                {
+                    case "1":
+                        UserMenu.Show();
+                        break;
+                    case "2":
+                        MemberMenu.Show();
+                        break;
+                    case "0":
+                        exit = true;
+                        break;
+                    default:
+                        Console.WriteLine(" Invalid choice. Press any key...");
+                        Console.ReadKey();
+                        break;
+                }
+            }
+        }
     }
 }

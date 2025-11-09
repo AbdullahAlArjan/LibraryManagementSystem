@@ -1,14 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data;
 using Library.DataAccessLayer.Interfaces;
-using Library.DataAccessLayer;
+using Library.Entities;
 
 namespace Library.BusinessLayer
 {
-    public class MemberManager : IMemberRepository
+    public class MemberManager
     {
         private readonly IMemberRepository _memberRepository;
 
@@ -17,26 +14,41 @@ namespace Library.BusinessLayer
             _memberRepository = memberRepository;
         }
 
-        public void AddMember(Member member)
+        public int AddMember(Member member)
         {
-            _memberRepository.AddMember(member);
+            if (string.IsNullOrWhiteSpace(member.FullName))
+                throw new ArgumentException("Member name is required.");
+
+            return _memberRepository.AddMember(member);
         }
+
         public Member GetMemberById(int id)
         {
+            if (id <= 0)
+                throw new ArgumentException("Invalid member ID.");
+
             return _memberRepository.GetMemberById(id);
         }
+
         public DataTable GetAllMembers()
         {
             return _memberRepository.GetAllMembers();
         }
-        public void UpdateMember(Member member)
+
+        public bool UpdateMember(Member member)
         {
-            _memberRepository.UpdateMember(member);
-        }
-        public void DeleteMember(int id)
-        {
-            _memberRepository.DeleteMember(id);
+            if (member == null || member.MemberID <= 0)
+                throw new ArgumentException("Invalid member data.");
+
+            return _memberRepository.UpdateMember(member);
         }
 
+        public bool DeleteMember(int id)
+        {
+            if (id <= 0)
+                throw new ArgumentException("Invalid member ID.");
+
+            return _memberRepository.DeleteMember(id);
+        }
     }
 }

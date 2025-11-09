@@ -1,35 +1,59 @@
-﻿namespace Library.BusinessLayer
+﻿using System;
+using System.Data;
+using Library.Entities;
+using Library.DataAccessLayer.Interfaces;
+
+namespace Library.BusinessLayer
 {
     public class UserManager
     {
+        private readonly IUserRepository _userRepository;
+
+        public UserManager(IUserRepository userRepository)
+        {
+            _userRepository = userRepository;
+        }
+
         public bool ValidateLogin(string username, string password)
         {
-            // Implement login validation logic here
-            return true; // Placeholder
+            return _userRepository.ValidateLogin(username, password);
         }
-        public void AddUser(User user)
+
+        public int AddUser(User user)
         {
-            // Implement add user logic here
+            if (string.IsNullOrWhiteSpace(user.Username) || string.IsNullOrWhiteSpace(user.Password))
+                throw new ArgumentException("Username and password are required.");
+
+            return _userRepository.AddUser(user);
         }
-        public void UpdateUser(User user)
+
+        public bool UpdateUser(User user)
         {
-            // Implement update user logic here
+            if (user == null || user.UserID <= 0)
+                throw new ArgumentException("Invalid user data.");
+
+            return _userRepository.UpdateUser(user);
         }
-        public void DeleteUser(int userId)
+
+        public bool DeleteUser(int userId)
         {
-            // Implement delete user logic here
+            if (userId <= 0)
+                throw new ArgumentException("Invalid user ID.");
+
+            return _userRepository.DeleteUser(userId);
         }
+
         public DataTable GetAllUsers()
         {
-            // Implement get all users logic here
-            return new DataTable(); // Placeholder
+            return _userRepository.GetAllUsers();
         }
+
         public User GetUserById(int userId)
         {
-            // Implement get user by ID logic here
-            return new User(); // Placeholder
-        }
-         
+            if (userId <= 0)
+                throw new ArgumentException("Invalid user ID.");
 
+            return _userRepository.GetUserById(userId);
+        }
     }
 }

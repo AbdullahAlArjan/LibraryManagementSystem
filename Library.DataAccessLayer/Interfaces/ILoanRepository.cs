@@ -1,3 +1,4 @@
+using Library.Entities;
 using System;
 using System.Data;
 
@@ -5,8 +6,8 @@ namespace Library.DataAccessLayer.Interfaces;
 
 public interface ILoanRepository
 {
-    void AddLoan(Loan loan);
-    void ReturnBook(int loadId);
+    int AddLoan(Loan loan);
+    bool ReturnBook(int loanId);
     DataTable GetActiveLoans();
     DataTable GetLoansByMemberId(int memberId);
 }

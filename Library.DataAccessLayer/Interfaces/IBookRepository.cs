@@ -1,14 +1,16 @@
 using System;
 using System.Collections.Concurrent;
 using System.Data;
+using Library.Entities;
+using System.Data;
 
 namespace Library.DataAccessLayer.Interfaces;
 
 public interface IBookRepository
 {
-    void AddBook(Book book);
+    int AddBook(Book book);
     Book GetBookById(int id);
     DataTable GetAllBooks();
-    void UpdateBook(Book book);
-    void DeleteBook(int id);
+    bool UpdateBook(Book book);
+    bool DeleteBook(int id);
 }
