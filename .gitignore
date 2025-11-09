@@ -1,0 +1,20 @@
+# Ignore build artifacts
+bin/
+obj/
+
+# Ignore Visual Studio cache
+.vs/
+*.user
+*.suo
+
+# Ignore database files
+*.mdf
+*.ldf
+
+# Ignore backups and logs
+*.bak
+*.log
+
+# Ignore temporary files
+*.tmp
+*.vscode/
